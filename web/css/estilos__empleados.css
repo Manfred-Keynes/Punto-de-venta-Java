@@ -1,0 +1,27 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 26/03/2022, 08:35:38
+    Author     : mfer_
+*/
+
+ .container-data{
+  height: auto;
+  overflow-y: scroll;
+  background: #fff;
+  
+} 
+
+
+
+.main{
+    background-color: #212529;
+}
+
+.main h1{
+    font-family: sans-serif;
+    color:#7a7a7a;
+    text-align: center;
+}

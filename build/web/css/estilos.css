@@ -1,0 +1,199 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 21/03/2022, 23:39:10
+    Author     : mfer_
+*/
+
+
+
+
+ 
+.main{
+    background-color: #212529;
+}
+    
+
+.directorio-section {
+  padding-top: 6rem;
+  background-color: #212529;
+  background-size: cover;
+}  
+    
+/******************************INICIO DE LAS CARD************************/
+.container__box {
+  height: auto;
+  max-width: 1100px;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container__box a{
+    text-decoration: none;
+}
+.box {
+  width: 218px;
+  height: 200px;
+  background: #212529;
+  margin: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 300ms ease;
+  position: relative;
+}
+/*-----------colores de las cards------------------*/
+.bx-1:hover {
+  transform: scale(1.1);
+  background: #dd4b25;
+  z-index: 1;
+}
+.bx-2:hover {
+  transform: scale(1.1);
+  background: #066ac9;
+  z-index: 1;
+}
+.bx-3:hover {
+  transform: scale(1.1);
+  background: #7a1ea1;
+  z-index: 1;
+}
+.bx-4:hover {
+  transform: scale(1.1);
+  background: #066ac9;
+  z-index: 1;
+}
+.bx-5:hover {
+  transform: scale(1.1);
+  background: #e8b600;
+  z-index: 1;
+}
+.bx-6:hover {
+  transform: scale(1.1);
+  background: #3f3f3f;
+  background: #9e2435;
+  z-index: 1;
+}
+.bx-7:hover {
+  transform: scale(1.1);
+  background: #3f51b5;
+  z-index: 1;
+}
+.bx-8:hover {
+  transform: scale(1.1);
+  background: #303030;
+  z-index: 1;
+}
+.bx-9:hover {
+  transform: scale(1.1);
+  background: #066ac9;
+  z-index: 1;
+}
+.box i {
+  font-size: 60px;
+  color: #0d6efd;
+}
+.box:hover i {
+  color: #fff;
+}
+.box h5 {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #777777;
+}
+.box:hover h5 {
+  color: #fff;
+  opacity: 0;
+}
+.box h4 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #212529;
+  position: absolute;
+  bottom: 50px;
+  filter: blur(5px);
+  opacity: 1;
+}
+.box:hover h4 {
+  font-size: 14px;
+  opacity: 1;
+  filter: blur(0px);
+  color: #fff;
+  transition: all 600ms ease;
+}
+/*-----------------------FIN DE LAS CARD----------------------*/
+/*-----------linea division en los titulos y headers----------*/
+.divider-custom1 {
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divider-custom1 .divider-custom-line {
+  width: 100%;
+  max-width: 30rem;
+  height: 0.3rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border-color: #ffffff;
+}
+.divider-custom1 .divider-custom-line:first-child {
+  margin-right: 0rem;
+}
+.divider-custom1 .divider-custom-line:last-child {
+  margin-left: 0rem;
+}
+.divider-custom1 .divider-custom-icon {
+  color: #ffc107;
+  font-size: 3rem;
+}
+.divider-custom1.divider-light .divider-custom-line {
+  background-color: #fff;
+}
+.divider-custom1.divider-light .divider-custom-icon {
+  color: #fff;
+}
+.divider-custom {
+  margin: 0rem 0rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divider-custom .divider-custom-line {
+  width: 100%;
+  max-width: 12rem;
+  height: 0.3rem;
+  background-color: #2c3e50;
+  border-radius: 1rem;
+  border-color: #2c3e50;
+}
+.divider-custom .divider-custom-line:first-child {
+  margin-right: 0rem;
+}
+.divider-custom .divider-custom-line:last-child {
+  margin-left: 0rem;
+}
+.divider-custom .divider-custom-icon {
+  color: #0d6efd;
+  font-size: 3rem;
+}
+.divider-custom.divider-light .divider-custom-line {
+  background-color: #fff;
+}
+.divider-custom.divider-light .divider-custom-icon {
+  color: #fff;
+}
+/******************************estilos de la tabla************************/
+ .container-data{
+  height: 500px;
+  overflow: scroll;
+} 

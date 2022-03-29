@@ -1,0 +1,98 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 23/03/2022, 21:46:55
+    Author     : mfer_
+*/
+
+.page-section {
+    border: none;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 1rem;
+
+  }
+.container-head{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color:#1c7ed6;
+}
+.container-head h2{
+    color: #1c3454;
+}
+
+.info-cliente{
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 5px 15px 0px rgb(66 24 113/ 30%);
+    backdrop-filter: blur (20px);
+    -webkit-backdrop-filter: blur (10px);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+}
+
+
+/*-----------linea division en los titulos y headers----------*/
+.divider-custom1 {
+    margin: 1.25rem 0 1.5rem;
+    width: 100%;
+
+  }
+  .divider-custom1 .divider-custom-line {
+    width: 100%;
+    max-width: 100%;
+    height: 0.3rem;
+    background-color: #212529;
+    border-radius: 1rem;
+    border-color: #212529;
+  }
+  .divider-custom1 .divider-custom-line:first-child {
+    margin-right: 0rem;
+  }
+  .divider-custom1 .divider-custom-line:last-child {
+    margin-left: 0rem;
+  }
+  .divider-custom1 .divider-custom-icon {
+    color: #ffc107;
+    font-size: 3rem;
+  }
+  .divider-custom1.divider-light .divider-custom-line {
+    background-color: #fff;
+  }
+  .divider-custom1.divider-light .divider-custom-icon {
+    color: #fff;
+  }
+  .divider-custom {
+    margin: 0rem 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .divider-custom .divider-custom-line {
+    width: 100%;
+    max-width: 12rem;
+    height: 0.3rem;
+    background-color: #2c3e50;
+    border-radius: 1rem;
+    border-color: #2c3e50;
+  }
+  .divider-custom .divider-custom-line:first-child {
+    margin-right: 0rem;
+  }
+  .divider-custom .divider-custom-line:last-child {
+    margin-left: 0rem;
+  }
+  .divider-custom .divider-custom-icon {
+    color: #0d6efd;
+    font-size: 3rem;
+  }
+  .divider-custom.divider-light .divider-custom-line {
+    background-color: #fff;
+  }
+  .divider-custom.divider-light .divider-custom-icon {
+    color: #fff;
+  }
