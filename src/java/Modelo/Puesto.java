@@ -210,28 +210,28 @@ public class Puesto {
         
         return retorno;
     }
-//    public int eliminar() {
-//        int retorno = 0;
-//        
-//         try{
-//            PreparedStatement parametro;
-//            
-//            String query;
-//            cn = new Conexion();
-//            cn.abrir_conexion();
-//            query = "DELETE from puestos WHERE idPuesto = ?;";
-//            parametro = (PreparedStatement) cn.conexionBD.prepareStatement(query);
-//            parametro.setInt(1,getId_puesto());
-//            
-//            retorno = parametro.executeUpdate();
-//            cn.cerrar_conexion();
-//                    
-//        }catch(HeadlessException | SQLException ex){
-//            System.out.println("Error" + ex.getMessage());
-//        }
-//         
-//        return retorno;
-//    }
+    public int eliminar() {
+        int retorno = 0;
+        
+         try{
+            PreparedStatement parametro;
+            
+            String query;
+            cn = new Conexion();
+            cn.abrir_conexion();
+            query = "DELETE from puestos WHERE idPuesto = ?;";
+            parametro = (PreparedStatement) cn.conexionBD.prepareStatement(query);
+            parametro.setInt(1,getId_puesto());
+            
+            retorno = parametro.executeUpdate();
+            cn.cerrar_conexion();
+                    
+        }catch(HeadlessException | SQLException ex){
+            System.out.println("Error" + ex.getMessage());
+        }
+         
+        return retorno;
+    }
 
 
 }

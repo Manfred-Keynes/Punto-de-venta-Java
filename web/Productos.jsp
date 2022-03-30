@@ -19,8 +19,12 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <!--estilos css-->    
-        <link href="css/estilos.css" rel="stylesheet" type="text/css" />
+        <!--iconos fontawesome-->
+        <script src="https://kit.fontawesome.com/ac17241314.js" crossorigin="anonymous"></script>
+         <!--estilos css-->    
+<!--    <link href="css/estilos.css" rel="stylesheet" type="text/css" />-->
+        <link href="css/custom__css.css" rel="stylesheet" type="text/css"/>
+        
         <title>Productos</title>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">>
         <div class="container-fluid">
@@ -40,73 +44,27 @@
         
     </head>
     <body class="main">
-       <div class="container mt-4">
-           <style>
-               h1{
-                   color: #FFFFFF;
-               }
-           </style>
-           <h1 class="text-center">Mantenimiento de  Porductos</h1>
-           <br>
-           <button type="button"  class="btn btn-primary table-hover" data-toggle="modal" data-target="#modal_productos" onclick="limpiar()">Nuevo Mantenimiento</button>
-           <a class="btn btn-success" href="sr_productos?accion=Listar">Refrescar</a>
-           <a href="reportes/productos_pdf.jsp" class="btn btn-danger">Generar reporte de Productos</a>
-           <!-- Modal -->
-           <div id="modal_productos" class="modal fade" role="dialog">
-               <div class="modal-dialog">
+       <div class="container content-tbl">
+           
 
-                   <!-- Modal content-->
-                   <div class="modal-content">
-
-                       <div class="modal-body">
-                           <form action="sr_productos?accion=Guardar" id="form_productos" class="form-group" method="POST" enctype="multipart/form-data">
-                               <label>Id</label>
-                               <input type="text" name="txt_id" id="txt_id" value="0" readonly class="form-control"  >
-
-                               <label>Nombre del Producto</label>
-                               <input type="text" name="txt_nombre" id="txt_nombre" value="" class="form-control" >
-
-                               <label>Marca</label>
-                               <select name="drop_marcas" id="drop_marcas"class="form-control" >
-                                   <option value="0" disabled selected>--Seleccione--</option>
-                                   <%
-                                       Marca marca = new Marca();
-                                       HashMap<String, String> drop = marca.drop_sangre();
-                                       for (String i : drop.keySet()) {
-                                           out.println(" <option value='" + i + "'>" + drop.get(i) + "</option>");
-                                       }
-                                   %>
-                               </select>
-
-                               <label>Descripcion</label>
-                               <input type="text" name="txt_descripcion" id="txt_descripcion" value="" class="form-control">
-
-                               <label>Costo</label>
-                               <input type="number" name="txt_costo" id="txt_costo" value="" class="form-control" >
-
-                               <label>Precio</label>
-                               <input type="number" name="txt_precio" id="txt_precio" value="" class="form-control" >
-
-                               <label>Existencia</label>
-                               <input type="number" name="txt_existencia" id="txt_existencia" value="" class="form-control" >
-                               <div class="mb-3">
-                                   <label class="form-label"><b>Selecciona una imagen del producto.</b></label>
-
-                                   <input type="file" class="form-control" name="fileImagen" id="fileImagen" >
-                               </div>
-                               <button class="btn btn-primary" name="accion" value="Guardar">Guardar</button>
-                               <button class="btn btn-secondary" name="accion" value="Actualizar">Actualizar</button>
-                               <button  value="eliminar"class="btn btn-danger" onclick="javascript:if(!confirm('¿Desea Eliminar el registro?'))return false">Eliminar</button>
-                               <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
-                           </form>
-                       </div>
-                   </div>
-              </div>
-            </div>
-            <hr>   
-            <div class="container">
-                <table class="table table-hover">
-                    <thead class="thead-color">
+            
+           
+           
+           
+          <h1><i class="fa-solid fa-box-open"></i> Productos</h1>
+         <div class="divider-custom1">
+         <div class="divider-custom-line"></div>
+        </div>
+        <button type="button"  class="btn btn-primary table-hover" data-toggle="modal" data-target="#modal_productos" onclick="limpiar()"><i class="fa-solid fa-plus"></i> Nuevo Producto</button>
+        <a class="btn btn-success" href="sr_productos?accion=Listar"><i class="fa-solid fa-rotate-right"></i> Refrescar</a>
+        <a href="reportes/productos_pdf.jsp" class="btn btn-dark"><i class="fa-solid fa-sheet-plastic"></i> Generar reporte</a>
+           
+           
+           
+           
+            <div class="container-data mt-5">
+                <table class="table table-hover table-light table-striped  table-bordered text-center">
+                    <thead class="table-dark">
                         
                                 <tr class="text-center">
                                     <!--th>#</th-->
@@ -145,7 +103,60 @@
                         </tbody>        
                     </table> 
             </div>
-                </div>       
+                </div>
+                                
+            <!-- Modal -->
+           <div id="modal_productos" class="modal fade" role="dialog">
+               <div class="modal-dialog modal-lg">
+
+                   <!-- Modal content-->
+                   <div class="modal-content">
+
+                       <div class="modal-body">
+                           <form action="sr_productos?accion=Guardar" id="form_productos" class="form-group" method="POST" enctype="multipart/form-data">
+                               <label>Id</label>
+                               <input type="text" name="txt_id" id="txt_id" value="0" readonly class="form-control"  >
+
+                               <label>Nombre del Producto</label>
+                               <input type="text" name="txt_nombre" id="txt_nombre" value="" class="form-control" >
+
+                               <label>Marca</label>
+                               <select name="drop_marcas" id="drop_marcas"class="form-control" >
+                                   <option value="0" disabled selected>--Seleccione--</option>
+                                   <%
+                                       Marca marca = new Marca();
+                                       HashMap<String, String> drop = marca.drop_sangre();
+                                       for (String i : drop.keySet()) {
+                                           out.println(" <option value='" + i + "'>" + drop.get(i) + "</option>");
+                                       }
+                                   %>
+                               </select>
+
+                               <label>Descripcion</label>
+                               <input type="text" name="txt_descripcion" id="txt_descripcion" value="" class="form-control">
+
+                               <label>Costo</label>
+                               <input type="number" name="txt_costo" id="txt_costo" value="" class="form-control" >
+
+                               <label>Precio</label>
+                               <input type="number" name="txt_precio" id="txt_precio" value="" class="form-control" >
+
+                               <label>Existencia</label>
+                               <input type="number" name="txt_existencia" id="txt_existencia" value="" class="form-control" >
+                               <div class="mb-3">
+                                   <label class="form-label"><b>Selecciona una imagen del producto.</b></label>
+
+                                   <input type="file" class="form-control py-2 bg-light" name="fileImagen" id="fileImagen" >
+                               </div>
+                               <button class="btn btn-primary" name="accion" value="Guardar"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                               <button class="btn btn-secondary" name="accion" value="Actualizar"><i class="fa-solid fa-pen-to-square"></i> Actualizar</button>
+                               <button  value="eliminar"class="btn btn-danger" onclick="javascript:if(!confirm('¿Desea Eliminar el registro?'))return false"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                               <button type="button" class="btn btn-dark" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+                           </form>
+                       </div>
+                   </div>
+              </div>
+            </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

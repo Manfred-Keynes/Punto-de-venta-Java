@@ -38,7 +38,7 @@ public class sr_puesto extends HttpServlet {
             //int id_puesto, String puesto, int id_departamento, String fechaIngreso, String estado
             
         // Boton agregar 
-            if ("agregar".equals(request.getParameter("btn_agregar"))){
+            if ("agregar".equals(request.getParameter("btnGuardar"))){
              if (puesto.agregar()>0){
              response.sendRedirect("http://localhost:8081/Ventas/Puestos.jsp");
              }else{
@@ -57,15 +57,15 @@ public class sr_puesto extends HttpServlet {
              }
              }
             
-            // Boton eliminar 
-//            if ("eliminar".equals(request.getParameter("btn_eliminar"))){
-//             if (puesto.eliminar()>0){
-//             response.sendRedirect("http://localhost:8081/Ventas/Puestos.jsp");
-//             }else{
-//             out.println("<h1> xxxxxxx No se Elimino xxxxxxxxxxxx </h1>");
-//             out.println("<a href='welcome.jsp'>Regresar...</a>");
-//             }
-//             }
+             //Boton eliminar 
+            if ("eliminar".equals(request.getParameter("btnGuardar"))){
+             if (puesto.eliminar()>0){
+             response.sendRedirect("http://localhost:8081/Ventas/Puestos.jsp");
+             }else{
+             out.println("<h1> xxxxxxx No se Elimino xxxxxxxxxxxx </h1>");
+             out.println("<a href='welcome.jsp'>Regresar...</a>");
+             }
+             }
             
             
             out.println("</body>");

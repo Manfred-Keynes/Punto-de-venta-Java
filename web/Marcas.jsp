@@ -18,18 +18,7 @@
 %>
 <html>
     <head>
-        <style>
-           body{
-           background: url(https://cdn.osxdaily.com/wp-content/uploads/2020/12/macos-big-sur-updated-wallpapers-1.jpg) no-repeat center center fixed;
-           background-size: cover;
-            }
-            .table{
-            opacity: 0.9;
-            .modal-body{
-            background: url(https://cdn.osxdaily.com/wp-content/uploads/2020/12/macos-big-sur-updated-wallpapers-2.jpg) no-repeat center center fixed;
-            background-size: cover;
-            }
-        </style>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <title>Marcas DB</title>

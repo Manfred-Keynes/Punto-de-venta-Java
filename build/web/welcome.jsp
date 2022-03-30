@@ -63,7 +63,7 @@
     <div class="container">
       <!-- <h1 class="display-4 font-weight-bold text-center py-4 mb-5" id="tecnologias-titulo">Tecnologias que manejo</h1> -->
       <!-- Portfolio Section Heading-->
-      <h1 class="page-section-heading text-center display-5 font-weight-bold text-white">Bienvenido <b class="text-warning">Usuario</b></h1>
+      <h1 class="page-section-heading text-center display-5 font-weight-bold text-white">Bienvenido <b class="text-warning">Manfred</b></h1>
       <!-- Icon Divider-->
       <div class="divider-custom1">
         <div class="divider-custom-line"></div>

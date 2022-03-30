@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Puestos
-    Created on : 8/10/2021, 23:03:09
-    Author     : Lenovo FX
+Document   : Puestos
+Created on : 8/10/2021, 23:03:09
+Author     : Lenovo FX
 --%>
 
 <%@page import="Modelo.Menu"%>
@@ -25,7 +25,9 @@
         <!--iconos fontawesome-->
         <script src="https://kit.fontawesome.com/ac17241314.js" crossorigin="anonymous"></script>
         <!--Estilos css-->
-        <link href="css/estilos__empleados.css" rel="stylesheet" type="text/css"/>
+        <!--        <link href="css/estilos__empleados.css" rel="stylesheet" type="text/css"/>-->
+        <link href="css/custom__css.css" rel="stylesheet" type="text/css"/>
+
         <title>Puestos DB</title>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">>
         <div class="container-fluid">
@@ -64,190 +66,116 @@
     </nav>
 </head>
 <body class="main">
-<!--    <section class="quien-soy" id="home">-->
-        <div class="container">
-<!--            <div class="row">-->
-               
-                <!--imagen desarrollador-->
-<!--                <div class=" img-cool">
-                    <div class="container mr-5">
-                        <img src="images/undraw_team.svg" alt="Soy el desarrollador" class="img-fluid mb-4">
-                    </div>           
-                </div>-->
-                
-                <div class="  px-5 bg-light rounded py-5">
-<!--                    <div class="container">
-                        <h1 class="text-center text-dark display-5 font-weight-bold mb-5">Mantenimiento de Puestos</h1>
-                        <form action="sr_puesto" method="post" class="form-group">
-                            <label for="lbl_id" class="text-dark"><b>ID</b></label>
-                            <input type="text" name="txt_id" id="txt_id" class="form-control" value="0" readonly>    
-
-                            <label for="lbl_puesto" class="text-dark"><b>Nombre del Puesto</b></label>
-                            <input type="text" name="txt_puesto" id="txt_puesto" class="form-control" placeholder="NombrePuesto">
-
-                            <label for="lbl_departamento" ><b>Departamento</b></label>
-                                <select name="drop_departamento" id="drop_departamento" class="form-select">
-                                    
-                                   
-                                </select>
-
-                            <label for="lbl_fechaIngreso" ><b>Fecha de ingreso</b></label>
-                            <input type="text" name="txt_fechaIngreso" id="txt_fechaIngreso" class="form-control" value="" placeholder="22/02/2022">
-
-                            <label for="lbl_estado" ><b>Estado</b></label>
-                            <input type="text" name="txt_estado" id="txt_estado" class="form-control" placeholder="activate">
-
-                            <div class="pt-2 text-end">
-                                <button name="btn_agregar" id="btn_agregar" value="agregar" class="btn btn-primary">Agregar</button>
-                                <button name="btn_modificar" id="btn_modificar" value="modificar" class="btn btn-success">Modificar</button>
-                                <button name="btn_eliminar" id="btn_eliminar" value="eliminar" class="btn btn-danger" onclick="javascript:if (!confirm('¿Desea Eliminar?'))return false">Eliminar</button> 
-                            </div>                  
-                        </form>
-                    </div>-->
-
-                   
-                    <div class="container">
-                        <table class="table table-hover table-light table-sm table-striped table-bordered" >
-                            <thead class="table-dark text-center">
-                                <tr>
-                                    <th scope="col">ID</th>                    
-                                    <th scope="col">Puesto</th>
-                                    
-                                    <th scope="col">Departamento</th>
-                                    <th scope="col" class="d-none">id_departamento</th>
-                                    <th scope="col">Fecha Ingreso</th>
-                                    <th scope="col">Estado</th>
-                                    <th scope="col">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbl_puestos" class="text-center">
-                                <%
-                                    Puesto puesto = new Puesto();
-                                    DefaultTableModel tabla = new DefaultTableModel();
-                                    tabla = puesto.leer();
-                                    for (int t = 0; t < tabla.getRowCount(); t++) {
-                                        out.println("<tr data-id=" + tabla.getValueAt(t, 0) + ">");
-//                                        out.println("<td>" + t + "</td>");
-                                        out.println("<td>" + tabla.getValueAt(t, 0) + "</td>");
-                                        out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
-                                        out.println("<td>" + tabla.getValueAt(t, 2) + "</td>");
-                                        out.println("<td class='d-none'>" + tabla.getValueAt(t, 3) + "</td>");
-                                        out.println("<td>" + tabla.getValueAt(t, 4) + "</td>");
-                                        out.println("<td>" + tabla.getValueAt(t, 5) + "</td>");
-                                        out.println("<td>"
-                                        + "<div class='text-center'>"
-                                            + "<div class='btn-group'>"
-                                            + "<a href='#' <a href='#' class='btn btn-primary btn-editar'>Editar</a>"
-                                            + "<a href='#' <a href='#' class='btn btn-danger btn-eliminar'>Eliminar</a>"
-                                            + "</div>"
-                                        + "</td>");
-                                        
-                                        out.println("</tr>");
-                                    }
-                                %>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>                       
-<!--            </div>-->
+    <div class="container content-tbl">
+        <h1><i class="fa-solid fa-user-tie"></i> Puestos</h1>
+        <div class="divider-custom1">
+            <div class="divider-custom-line"></div>
         </div>
-<!--    </section>-->
+        <button id="btnNuevo" type="button" class="btn btn-success btn-lg" data-toggle="modal"><i class="fa-solid fa-plus"></i> Nuevo</button>
+        <div class="container-data mt-5">
+            <table class="table table-hover table-light table-sm table-striped table-bordered table-sm" >
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th scope="col">ID</th>                    
+                        <th scope="col">Puesto</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col" class="d-none">id_departamento</th>
+                        <th scope="col">Fecha Ingreso</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl_puestos" class="text-center">
+                    <%
+                        Puesto puesto = new Puesto();
+                        DefaultTableModel tabla = new DefaultTableModel();
+                        tabla = puesto.leer();
+                        for (int t = 0; t < tabla.getRowCount(); t++) {
+                            out.println("<tr data-id=" + tabla.getValueAt(t, 0) + ">");
+                    //                                        out.println("<td>" + t + "</td>");
+                            out.println("<td>" + tabla.getValueAt(t, 0) + "</td>");
+                            out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+                            out.println("<td>" + tabla.getValueAt(t, 2) + "</td>");
+                            out.println("<td class='d-none'>" + tabla.getValueAt(t, 3) + "</td>");
+                            out.println("<td>" + tabla.getValueAt(t, 4) + "</td>");
+                            out.println("<td>" + tabla.getValueAt(t, 5) + "</td>");
+                            out.println("<td>"
+                                    + "<div class='text-center'>"
+                                    + "<div class='btn-group'>"
+                                    + "<a href='#' class='btn btn-primary btn-editar'><i class='fa-solid fa-pen-to-square'></i></a>"
+                                    + "<a href='#' class='btn btn-danger btnBorrar'><i class='fa-solid fa-trash'></i></a>"
+                                    + "</div>"
+                                    + "</td>");
+
+                            out.println("</tr>");
+                        }
+                    %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
         <!--Modal para CRUD-->
-        <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <div class="modal fade" id="modalCRUD" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </button>
                     </div>
-                <form action="sr_puesto" method="post">    
-                    <div class="modal-body">
-                        <div class="form-group">
-                        <label for="lbl_id"><b>ID</b></label>
-                        <input type="text" name="txt_id" id="txt_id" class="form-control" value="0" readonly>  
-                        </div>
-                        <div class="form-group">
-                        <label for="lbl_puesto" ><b>Nombre del Puesto</b></label>
-                        <input type="text" name="txt_puesto" id="txt_puesto" class="form-control" placeholder="NombrePuesto">
-                        </div>                
-                        <div class="form-group">
-                        <label for="lbl_departamento" ><b>Departamento</b></label>
-                                <select name="drop_departamento" id="drop_departamento" class="form-select">
-                                    
-                                    <%
-                                        Departamento departamento = new Departamento();
-                                        HashMap<String, String> drop = departamento.drop_sangre();
-                                        for (String i : drop.keySet()) {
-                                            out.println(" <option value='" + i + "'>" + drop.get(i) + "</option>");
-                                        }
-                                    %>
-                                </select>
-                        </div>
-                        <div class="form-group">
-                         <label for="lbl_fechaIngreso" ><b>Fecha de ingreso</b></label>
-                         <input type="text" name="txt_fechaIngreso" id="txt_fechaIngreso" class="form-control" value="" placeholder="22/02/2022">
-                        </div>
-                        <div class="form-group">
-                         <label for="lbl_estado" ><b>Estado</b></label>
-                         <input type="text" name="txt_estado" id="txt_estado" class="form-control" placeholder="activate">
-                        </div> 
-                    </div>
-                    <div class="modal-footer">
-<!--                        <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
-                        <button name="btn_modificar" id="btn_modificar" value="modificar" class="btn btn-success">Modificar</button>-->
-                        <button name="btnGuardar" id="btnGuardar"  class="btn btn-dark">Guardar</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    </div>
-                </form>    
+                    <form id="formPersonas" action="sr_puesto" method="post">    
+                        <div class="modal-body">
+                            <div class="container mt-0">
+
+                                <div class="divider-custom1">
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="container col-4 offset-4">
+                                        <label for="lbl_id" ><b>ID</b></label>
+                                        <input type="text" name="txt_id" id="txt_id" class="form-control" value="0" readonly="">
+                                    </div>
+                                    <div class="container col-4">
+                                        <label for="lbl_puesto" ><b>Nombre del Puesto</b></label>
+                                        <input type="text" name="txt_puesto" id="txt_puesto" class="form-control" placeholder="NombrePuesto">
+                                    </div>
+                                    <div class="container col-4">
+                                        <label for="lbl_departamento" ><b>Departamento</b></label>
+                                        <select name="drop_departamento" id="drop_departamento" class="form-select">
+                                            <%
+                                                Departamento departamento = new Departamento();
+                                                HashMap<String, String> drop = departamento.drop_sangre();
+                                                for (String i : drop.keySet()) {
+                                                    out.println(" <option value='" + i + "'>" + drop.get(i) + "</option>");
+                                                }
+                                            %>
+                                        </select>
+                                    </div>
+                                    <div class="container col-4">
+                                        <label for="lbl_fechaIngreso" ><b>Fecha de ingreso</b></label>
+                                        <input type="date" name="txt_fechaIngreso" id="txt_fechaIngreso" class="form-control" value="" placeholder="22/02/2022">
+                                    </div>
+                                    <div class="container col-4">
+                                        <label for="lbl_estado" ><b>Estado</b></label>
+                                        <input type="text" name="txt_estado" id="txt_estado" class="form-control" placeholder="Estado">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container col-12 text-end pt-3">
+                                <button name="btnGuardar" id="btnGuardar"  class="btn btn-primary">Aceptar</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                    </form>    
                 </div>
             </div>
         </div> 
+    </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript">
-        var fila; //captura la fila para editar o borrar el registro
-        
-        //boton editar
-        $(document).on("click", ".btn-editar", function () {
-            fila = $(this).closest("tr");
- 
-            id = parseInt(fila.find('td:eq(0)').text());
-            puesto = fila.find('td:eq(1)').text();
-            departamento = fila.find('td:eq(2)').text();
-            id_departamento = fila.find('td:eq(3)').text();
-            fecha_ingreso = fila.find('td:eq(4)').text();
-            estado = fila.find('td:eq(5)').text();
-            value='modificar';
-//            alert(value);
-            //llenado de las cajas de texto
-
-
-
-            $("#txt_id").val(id);
-            $("#txt_puesto").val(puesto);
-            $("#drop_departamento").val(id_departamento);
-            $("#txt_fechaIngreso").val(fecha_ingreso);
-            $("#txt_estado").val(estado);
-            //valor del boton 
-            $("#btnGuardar").val(value);
-//            $("#btnGuardar").name('btn_modificar');
-            
-            
-            //modal
-            $(".modal-header").css("background-color", "#007bff");
-            $(".modal-header").css("color", "white");
-            $(".modal-title").text("Editar Puesto");            
-            $("#modalCRUD").modal("show");  
-    
-});              
-
-                    
-                        
-                    
-    </script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
