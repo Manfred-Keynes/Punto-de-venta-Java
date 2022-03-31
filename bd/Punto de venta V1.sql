@@ -34,7 +34,7 @@ CREATE TABLE `clientes` (
   `correo_electronico` varchar(45) DEFAULT NULL,
   `fechaIngreso` datetime DEFAULT NULL,
   PRIMARY KEY (`idClientes`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'Maria Jose','Castillo Ruiz','12345678',_binary '\0','78391548','majo12@gmail.com','2021-11-13 22:26:23'),(2,'Jose Luis','Perez Barrios','32165498',_binary '','78391548','joseLuis23@gmail.com','2021-11-13 22:26:23');
+INSERT INTO `clientes` VALUES (1,'Maria Jose','Castillo Ruiz','12345678',_binary '\0','78391548','majo12@gmail.com','2021-11-13 22:26:23'),(2,'Jose Luis','Perez Barrios','32165498',_binary '','78391548','joseLuis23@gmail.com','2021-11-13 22:26:23'),(3,'Kristel Arabella','Betteney Antonignetti','87310978',_binary '\0','873109289','lbenko0@yolasite.com','2022-03-30 00:45:51'),(4,'Whitman Nickie','Teresse Blackburn','78239058',_binary '','98915432','wferricks@51.la','2022-03-30 00:47:25');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,6 +166,30 @@ INSERT INTO `empleados` VALUES (11,'Juan Manuel','Sanchez Juarez','ciudad','111'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `estado`
+--
+
+DROP TABLE IF EXISTS `estado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `estado` (
+  `id_estado` int(11) NOT NULL AUTO_INCREMENT,
+  `estado` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_estado`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `estado`
+--
+
+LOCK TABLES `estado` WRITE;
+/*!40000 ALTER TABLE `estado` DISABLE KEYS */;
+INSERT INTO `estado` VALUES (1,'Activo'),(2,'Inactivo');
+/*!40000 ALTER TABLE `estado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `marcas`
 --
 
@@ -175,8 +199,12 @@ DROP TABLE IF EXISTS `marcas`;
 CREATE TABLE `marcas` (
   `idMarca` smallint(6) NOT NULL AUTO_INCREMENT,
   `marca` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`idMarca`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `fechaIngreso` date DEFAULT NULL,
+  `id_estado` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idMarca`),
+  KEY `id_estado_estado_marcas_idx` (`id_estado`),
+  CONSTRAINT `id_estado_estado_marcas` FOREIGN KEY (`id_estado`) REFERENCES `estado` (`id_estado`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +213,7 @@ CREATE TABLE `marcas` (
 
 LOCK TABLES `marcas` WRITE;
 /*!40000 ALTER TABLE `marcas` DISABLE KEYS */;
-INSERT INTO `marcas` VALUES (2,'Dell'),(5,'Samsung'),(6,'HP');
+INSERT INTO `marcas` VALUES (2,'Dell','2022-02-02',1),(5,'Samsung','2022-02-02',2),(6,'HP','2022-02-02',1),(7,'sony','2022-02-02',1),(10,'Kingston','2022-03-02',1),(12,'Asus','2022-03-09',1);
 /*!40000 ALTER TABLE `marcas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,8 +261,8 @@ CREATE TABLE `productos` (
   `fecha_ingreso` datetime DEFAULT NULL,
   PRIMARY KEY (`idProducto`),
   KEY `idMarca_marcas_productos_idx` (`idMarca`),
-  CONSTRAINT `idMarca_marcas_productos` FOREIGN KEY (`idMarca`) REFERENCES `marcas` (`idmarca`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `idMarca_marcas_productos` FOREIGN KEY (`idMarca`) REFERENCES `marcas` (`idMarca`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,7 +271,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Dell Latitude',2,'5570','http://localhost:8081/Ventas/img/1.png',3000.00,4000.00,98,'2021-11-13 22:25:53'),(2,'Televisor Android',5,'Full HD 4k','http://localhost:8081/Ventas/img/3.png',1000.00,2000.00,50,'2021-11-13 22:50:22'),(3,'Telefono A30s',5,'A30S','http://localhost:8081/Ventas/img/SAMSUNG-Galaxy-A30s-3_preview_rev_1.png',5000.00,6000.00,90,'2021-11-13 22:51:06'),(4,'Play 5',6,'Play 5','http://localhost:8081/Ventas/img/ps5_preview_rev_1.png',1000.00,2000.00,99,'2021-11-13 22:51:57'),(5,'Adiofonos Inalambricos',2,'Inalambricos','http://localhost:8081/Ventas/img/audifonos-bluetooth.png',500.00,800.00,94,'2021-11-13 22:52:30'),(6,'Monitor Dell P2719h',2,'Monitor Dell','http://localhost:8081/Ventas/img/Dell__monitor.png',1800.00,2000.00,100,'2022-03-25 16:07:57');
+INSERT INTO `productos` VALUES (1,'Dell Latitude',2,'5570','http://localhost:8081/Ventas/img/1.png',3000.00,4000.00,98,'2021-11-13 22:25:53'),(2,'Televisor Android',5,'Full HD 4k','http://localhost:8081/Ventas/img/3.png',1000.00,2000.00,50,'2021-11-13 22:50:22'),(3,'Telefono A30s',5,'A30S','http://localhost:8081/Ventas/img/SAMSUNG-Galaxy-A30s-3_preview_rev_1.png',5000.00,6000.00,90,'2021-11-13 22:51:06'),(4,'Play 5',6,'Play 5','http://localhost:8081/Ventas/img/ps5_preview_rev_1.png',1000.00,2000.00,99,'2021-11-13 22:51:57'),(5,'Adiofonos Inalambricos',2,'Inalambricos','http://localhost:8081/Ventas/img/audifonos-bluetooth.png',500.00,800.00,94,'2021-11-13 22:52:30'),(6,'Monitor Dell P2719h',2,'Monitor Dell','http://localhost:8081/Ventas/img/Dell__monitor.png',1800.00,2000.00,100,'2022-03-25 16:07:57'),(8,'Laptop Asus Gamer',12,'Asus Gamer','http://localhost:8081/Ventas/img/asus.png',5000.00,6000.00,10,'2022-03-30 19:43:34');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -290,7 +318,7 @@ CREATE TABLE `puestos` (
   PRIMARY KEY (`idPuesto`),
   KEY `id_departamento_puestos_idx` (`id_departamento`),
   CONSTRAINT `id_departamento_puestos` FOREIGN KEY (`id_departamento`) REFERENCES `departamento` (`id_departamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -409,4 +437,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-28 23:42:28
+-- Dump completed on 2022-03-31  1:25:39
