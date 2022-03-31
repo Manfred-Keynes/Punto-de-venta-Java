@@ -19,12 +19,16 @@ import javax.swing.table.DefaultTableModel;
 public class Marca {
     private int id_marca;
     private String marca;
+    private String fechaIngreso;
+    private int estado;
     Conexion cn;
 
     public Marca(){}
-    public Marca(int id_marca, String marca) {
+        public Marca(int id_marca, String marca, String fechaIngreso, int estado) {
         this.id_marca = id_marca;
         this.marca = marca;
+        this.fechaIngreso = fechaIngreso;
+        this.estado = estado;
     }
 
     public int getId_marca() {
@@ -41,6 +45,22 @@ public class Marca {
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    public String getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
     
     public HashMap drop_sangre(){
@@ -70,15 +90,18 @@ public class Marca {
             String query;
             cn = new Conexion();
             cn.abrir_conexion();
-            query = "SELECT idMarca as id,marca FROM marcas;";
+            query = "SELECT m.idMarca as id, m.marca,m.fechaIngreso,m.id_estado,e.estado FROM marcas as m inner join estado as e on m.id_estado = e.id_estado;";
             ResultSet consulta = cn.conexionBD.createStatement().executeQuery(query);
-            String encabezado[] = {"id","Marca"};
+            String encabezado[] = {"id","Marca","fechaIngreso","id_estado","estado"};
             tabla.setColumnIdentifiers(encabezado);
             
-            String datos[] = new String[2];
+            String datos[] = new String[5];
             while(consulta.next()) {
                 datos[0] = consulta.getString("id");                
                 datos[1] = consulta.getString("marca");
+                datos[2] = consulta.getString("fechaIngreso");
+                datos[3] = consulta.getString("id_estado");
+                datos[4] = consulta.getString("estado");
                 tabla.addRow(datos);
             }
             
@@ -99,9 +122,11 @@ public class Marca {
             String query;
             cn = new Conexion();
             cn.abrir_conexion();
-            query = "INSERT INTO marcas(marca) VALUES(?);";
+            query = "INSERT INTO marcas(marca,fechaIngreso,id_estado) VALUES(?,?,?);";
             parametro = (PreparedStatement) cn.conexionBD.prepareStatement(query);
             parametro.setString(1, getMarca());
+            parametro.setString(2, getFechaIngreso());
+            parametro.setInt(3, getEstado());
             
             retorno = parametro.executeUpdate();
             cn.cerrar_conexion();
@@ -157,4 +182,8 @@ public class Marca {
          
         return retorno;
     }
+
+
+    
+    
 }

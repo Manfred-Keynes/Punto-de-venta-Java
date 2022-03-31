@@ -20,8 +20,9 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <!-- cistom css-->
   <link href="css/estiloslogin.css" rel="stylesheet" type="text/css" />
-
-    <title>Sing In & Sing Up Form</title>
+<!--logo icon-->
+  <link rel="icon" type="" href="img/header/bag-shopping-blue-solid.png">
+    <title>Punto de Venta</title>
 </head>
 
 <body>

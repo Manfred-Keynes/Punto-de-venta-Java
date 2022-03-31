@@ -34,10 +34,10 @@ public class sr_marca extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-            marca = new Marca(Integer.valueOf(request.getParameter("txt_id")),request.getParameter("txt_marca"));
-            
+            marca = new Marca(Integer.valueOf(request.getParameter("txt_id")),request.getParameter("txt_marca"),request.getParameter("txt_fechaIngreso"),Integer.valueOf(request.getParameter("drop_estado")));
+//            public Marca(int id_marca, String marca, String fechaIngreso, int estado))
         // Boton agregar 
-            if ("agregar".equals(request.getParameter("btn_agregar"))){
+            if ("agregar".equals(request.getParameter("btnGuardar-marca"))){
              if (marca.agregar()>0){
              response.sendRedirect("http://localhost:8081/Ventas/Marcas.jsp");
              }else{
@@ -47,7 +47,7 @@ public class sr_marca extends HttpServlet {
              }
             
             // Boton modificar 
-            if ("modificar".equals(request.getParameter("btn_modificar"))){
+            if ("modificar".equals(request.getParameter("btnGuardar-marca"))){
              if (marca.modificar()>0){
              response.sendRedirect("http://localhost:8081/Ventas/Marcas.jsp");
              }else{
@@ -57,7 +57,7 @@ public class sr_marca extends HttpServlet {
              }
             
             // Boton eliminar 
-            if ("eliminar".equals(request.getParameter("btn_eliminar"))){
+            if ("eliminar".equals(request.getParameter("btnGuardar-marca"))){
              if (marca.eliminar()>0){
              response.sendRedirect("http://localhost:8081/Ventas/Marcas.jsp");
              }else{

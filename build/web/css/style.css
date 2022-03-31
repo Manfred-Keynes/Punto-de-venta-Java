@@ -1,0 +1,70 @@
+
+
+
+
+/*---------------------------------P O R T A F O L I O------------------------------------------------------------*/
+/******************************************************************************************************************/
+.page-section {
+  border: none;
+  
+  margin-bottom: 8rem;
+  padding-top: 4rem;
+}
+
+/*----------- I T E M S ------------------	--------*/
+.svg{
+    font-size: 10rem;
+    text-align: center;
+}
+
+.portfolio .portfolio-item {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  max-width: 25rem;
+  overflow: hidden;
+  background: #EFF3F5; 
+  box-shadow: 0px 5px 15px 0px rgb(66 24 113/ 30%);
+}
+
+.portfolio .portfolio-item .portfolio-item-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  background-color: #212529;
+  
+}
+
+
+
+.portfolio .portfolio-item .portfolio-item-caption:hover {
+  opacity: 1;
+}
+
+.portfolio
+  .portfolio-item
+  .portfolio-item-caption
+  .portfolio-item-caption-content {
+  transform: translateY(500%);
+  transition: 0.4s ease-out;
+  overflow: hidden;
+  
+}
+
+
+
+.portfolio .portfolio-item:hover .portfolio-item-caption-content {
+  transform: translateY(0%);
+  
+}
+
+
+
+
+
+
+
+
+

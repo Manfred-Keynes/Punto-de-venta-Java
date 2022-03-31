@@ -23,25 +23,50 @@
         <!--iconos fontawesome-->
         <script src="https://kit.fontawesome.com/ac17241314.js" crossorigin="anonymous"></script>
         <!--Estilos css-->
-<!--        <link href="css/estilos__empleados.css" rel="stylesheet" type="text/css"/>-->
         <link href="css/custom__css.css" rel="stylesheet" type="text/css"/>
-        
+        <!--logo icon-->
+        <link rel="icon" type="" href="img/header/bag-shopping-blue-solid.png">
         <title>Proveedores</title>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">>
-        <div class="container-fluid">
-            <ul class="navbar-nav">
-                <%
-                    Menu menu = new Menu();
-                    DefaultTableModel tablaM = new DefaultTableModel();
-                    tablaM = menu.leer();
-                    for (int t = 0; t < tablaM.getRowCount(); t++) {
-                        out.println("<li class='nav-item'><a class='nav-link active' aria-current='page' href='http://localhost:8081/Ventas/" + tablaM.getValueAt(t, 1) + "'>" + tablaM.getValueAt(t, 2) + "</a></li>");
-                    }
-                %>
-
-            </ul> 
+   <section class="fondo-navbar">
+    <nav class="navbar navbar-dark  navbar-expand-md fixed-top" id="mainNav">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+            <img src="img/header/bag-shoppingMain.ico" alt="logo">
+          <span class="nombre-logo  font-weight-bold" href="welcome.jsp">Manfred Sirin</span>
+        </a>
+        <!--Boton Collapse-->
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menu de navegacion">
+          <!--span class="navbar-toggler-icon"></span-->
+          <span class="text-white">Menu</span>
+          <!-- <i class="fas fa-bars"></i> -->
+        </button>
+        <!--collapse-->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <!--margin left auto -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="welcome.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 active font-weight-bold text-center rounded"><i class="fa-solid fa-house"></i></a></li>
+                <li class="nav-item"><a href="Empleados.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Empleados</a></li>
+            <li class="nav-item"><a href="Clientes.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Clientes</a></li>
+            <li class="nav-item"><a href="Proveedores.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Proveedores <i class="fa-solid fa-dolly"></i></a></li>
+            <li class="nav-item"><a href="Puestos.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Puestos <i class="fa-solid fa-user-tie"></i></a></li>
+            <li class="nav-item"><a href="Marcas.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Marcas <i class="fa-solid fa-boxes-packing"></i></a></li>
+            <li class="nav-item"><a href="Productos.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Productos <i class="fa-solid fa-box-open"></i></a></li>
+            <li class="nav-item"><a href="RegistrarVenta.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Ventas <i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li class="nav-item"><a href="Reportes.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Reportes <i class="fa-solid fa-sheet-plastic"></i></a></li>
+          </ul>
         </div>
-                <div class="dropdown m-2">
+      </div>
+                        <div class="dropdown m-2">
                     <!--button style=" border: none" class="btn  btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     $//{usuario.getNom()}
                     </button-->
@@ -62,6 +87,7 @@
                     </div>
                 </div>
     </nav>
+  </section>
 </head>
 <body class="main">
 
@@ -77,8 +103,8 @@
          <div class="divider-custom1">
          <div class="divider-custom-line"></div>
         </div>
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_prove" onclick="limpiar()"><i class="fa-solid fa-plus"></i>Nuevo Proveedor</button>
-    <a href="reportes/proveedores_pdf.jsp" class="btn btn-danger"><i class="fa-solid fa-sheet-plastic"></i> Generar reporte</a>
+        <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#modal_prove" onclick="limpiar()"><i class="fa-solid fa-plus"></i>Nuevo Proveedor</button>
+    <a href="reportes/proveedores_pdf.jsp" class="btn btn-danger btn-lg"><i class="fa-solid fa-sheet-plastic"></i> Generar reporte</a>
             <div class="container-data mt-5">
         <table class="table table-hover table-light table-striped table-sm table-bordered">
             <thead class="table-dark text-center">
@@ -173,6 +199,6 @@
             $("#modal_prove").modal('show');
         });
     </script>
-    
+    <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>

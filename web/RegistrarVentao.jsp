@@ -36,33 +36,67 @@
   <!--logo icon-->
   <link rel="icon" type="" href="img/header/bag-shopping-blue-solid.png">
   <title>Ventas</title>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-    </div>
-    <div class="dropdown m-2">
-      <button class="btn  btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        <label>Manfred keynes sirin</label>
-      </button>
-      <div class="dropdown-menu text-center px-2" aria-labelledby="dropdownMenuButton1">
-        <a class="dropdown-item" href="#">
-          <img src="images/user.png" alt="60" width="60" />
+   <section class="fondo-navbar">
+    <nav class="navbar navbar-dark  navbar-expand-md fixed-top" id="mainNav">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+            <img src="img/header/bag-shoppingMain.ico" alt="logo">
+          <span class="nombre-logo  font-weight-bold" href="welcome.jsp">Manfred Sirin</span>
         </a>
-        <a class="dropdown-item" href="#">manfred</a>
-        <a class="dropdown-item" href="#">usuaio@gmail.com</a>
-        <div class="dropdown-divider"></div>
-        <form action="sr_login" method="POST">
-          <button name="btn_Salir" value="Salir" class="dropdown-item">Salir</button>
-        </form>
+        <!--Boton Collapse-->
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menu de navegacion">
+          <!--span class="navbar-toggler-icon"></span-->
+          <span class="text-white">Menu</span>
+          <!-- <i class="fas fa-bars"></i> -->
+        </button>
+        <!--collapse-->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <!--margin left auto -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="welcome.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 active font-weight-bold text-center rounded"><i class="fa-solid fa-house"></i></a></li>
+                <li class="nav-item"><a href="Empleados.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Empleados</a></li>
+            <li class="nav-item"><a href="Clientes.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Clientes</a></li>
+            <li class="nav-item"><a href="Proveedores.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Proveedores <i class="fa-solid fa-dolly"></i></a></li>
+            <li class="nav-item"><a href="Puestos.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Puestos <i class="fa-solid fa-user-tie"></i></a></li>
+            <li class="nav-item"><a href="Marcas.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Marcas <i class="fa-solid fa-boxes-packing"></i></a></li>
+            <li class="nav-item"><a href="Productos.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Productos <i class="fa-solid fa-box-open"></i></a></li>
+            <li class="nav-item"><a href="RegistrarVenta.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Ventas <i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li class="nav-item"><a href="Reportes.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Reportes <i class="fa-solid fa-sheet-plastic"></i></a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+                        <div class="dropdown m-2">
+                    <!--button style=" border: none" class="btn  btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    $//{usuario.getNom()}
+                    </button-->
+                    <button class="btn  btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <label>Manfred keynes sirin</label>
+                    </button>
+                    <div class="dropdown-menu text-center px-2" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" href="#">
+                            <img src="images/user.png" alt="60" width="60"/>
+                        </a>
+                        <!--a class="dropdown-item" href="#">$//{usuario.getUser()}</a-->
+                        <a class="dropdown-item" href="#">manfred</a>
+                        <a class="dropdown-item" href="#">usuaio@gmail.com</a>
+                        <div class="dropdown-divider"></div>
+                        <form action="sr_login" method="POST">
+                            <button  name="btn_Salir" value="Salir" class="dropdown-item">Salir</button>
+                        </form>
+                    </div>
+                </div>
+    </nav>
+  </section>
 </head>
 
 <body>
@@ -150,7 +184,7 @@
       <!-- <div class="container-head">
         <h2 class="text-center">Nueva venta</h2>
       </div> -->
-      <div class="container  info-cliente mt-2 pt-1">
+      <div class="container  info-cliente mt-5 pt-1">
         <h4 class="text-dark page-section">Producto</h4>
 
         <div class="divider-custom1">
@@ -301,6 +335,7 @@
             $("#fecha").val(today);
         });
   </script>
+  <script src="js/main.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -25,8 +25,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="css/estilos__flex.css" rel="stylesheet" type="text/css" />
   <!-- icons -->
@@ -36,21 +35,46 @@
   <!--logo icon-->
   <link rel="icon" type="" href="img/header/bag-shopping-blue-solid.png">
   <title>Ventas</title>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">>
-        <div class="container-fluid">
-            <ul class="navbar-nav">
-                <%
-                    Menu menu = new Menu();
-                    DefaultTableModel tablaM = new DefaultTableModel();
-                    tablaM = menu.leer();
-                    for (int t = 0; t < tablaM.getRowCount(); t++) {
-                        out.println("<li class='nav-item'><a class='nav-link active' aria-current='page' href='http://localhost:8081/Ventas/" + tablaM.getValueAt(t, 1) + "'>" + tablaM.getValueAt(t, 2) + "</a></li>");
-                    }
-                %>
-
-            </ul> 
+  <section class="fondo-navbar">
+    <nav class="navbar navbar-dark  navbar-expand-md fixed-top" id="mainNav">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+            <img src="img/header/bag-shoppingMain.ico" alt="logo">
+          <span class="nombre-logo  font-weight-bold" href="welcome.jsp">Manfred Sirin</span>
+        </a>
+        <!--Boton Collapse-->
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menu de navegacion">
+          <!--span class="navbar-toggler-icon"></span-->
+          <span class="text-white">Menu</span>
+          <!-- <i class="fas fa-bars"></i> -->
+        </button>
+        <!--collapse-->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <!--margin left auto -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="welcome.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 active font-weight-bold text-center rounded"><i class="fa-solid fa-house"></i></a></li>
+                <li class="nav-item"><a href="Empleados.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Empleados</a></li>
+            <li class="nav-item"><a href="Clientes.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Clientes</a></li>
+            <li class="nav-item"><a href="Proveedores.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Proveedores <i class="fa-solid fa-dolly"></i></a></li>
+            <li class="nav-item"><a href="Puestos.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Puestos <i class="fa-solid fa-user-tie"></i></a></li>
+            <li class="nav-item"><a href="Marcas.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Marcas <i class="fa-solid fa-boxes-packing"></i></a></li>
+            <li class="nav-item"><a href="Productos.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Productos <i class="fa-solid fa-box-open"></i></a></li>
+            <li class="nav-item"><a href="Ventas.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Ventas <i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li class="nav-item"><a href="Reportes.jsp"
+                class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Reportes <i class="fa-solid fa-sheet-plastic"></i></a></li>
+          </ul>
         </div>
-                <div class="dropdown m-2">
+      </div>
+                        <div class="dropdown m-2">
                     <!--button style=" border: none" class="btn  btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     $//{usuario.getNom()}
                     </button-->
@@ -71,6 +95,7 @@
                     </div>
                 </div>
     </nav>
+  </section>
 </head>
 
 <body>
@@ -159,7 +184,7 @@
       <!-- <div class="container-head">
         <h2 class="text-center">Nueva venta</h2>
       </div> -->
-      <div class="container  info-cliente mt-2 pt-1">
+      <div class="container  info-cliente mt-5 pt-1">
         <h4 class="text-dark page-section">Producto</h4>
 
         <div class="divider-custom1">
@@ -304,6 +329,7 @@
             $("#fecha").val(today);
         });
   </script>
+  <script src="js/main.js" type="text/javascript"></script>
 </body>
 
 </html>

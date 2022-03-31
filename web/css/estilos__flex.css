@@ -96,3 +96,115 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
   .divider-custom.divider-light .divider-custom-icon {
     color: #fff;
   }
+  
+  
+    /*----------- N A V B A R  ------------------	--------*/
+  .fondo-navbar {
+  padding-top: 6rem;
+  padding-bottom: 0rem;
+  background-color: #212529;
+}
+  
+  #mainNav {
+    padding-top: 1.3rem;
+    padding-bottom: 1.7rem;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+  }
+  /*tamaño de letra y transicion*/
+  #mainNav .navbar-brand {
+    font-size: 1rem;
+    transition: font-size 0.3s;
+  }
+
+
+/***************************-navbar estilos-*************************/
+#mainNav {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background: #212529 !important;
+  padding-top: 1.3rem;
+  padding-bottom: 1.7rem;
+  transition: padding-top 0.3s, padding-bottom 0.3s;
+}
+#mainNav .navbar-brand {
+  color: #fff;
+  font-size: 1.8em;
+  transition: font-size 0.3s;
+}
+#mainNav .navbar-brand img {
+  height: auto;
+  width: 2rem;
+  padding-bottom: 0.8rem;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  color: #fff;
+  font-size: 1.2rem;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+  color: #0d6efd;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:active,
+#mainNav .navbar-nav li.nav-item a.nav-link:focus {
+  color: #fff;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+  background: #0d6efd;
+}
+#mainNav .navbar-toggler {
+  font-size: 125%;
+  padding: 1rem;
+  background-color: #0d6efd;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+/*shink de la nav*/
+#mainNav.navbar-shrink {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#mainNav.navbar-shrink .navbar-brand {
+  font-size: 1.5em;
+}
+/*****fin del shink********/
+/*----------------selector activo de la nav----------------*/
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+  color: #fff;
+  background: #0d6efd;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:active,
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus,
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+  color: #fff;
+  background: #0d6efd;
+}
+/*****fin del selector activo de la nav*******/
+
+
+/*pagina flex-box*/
+.page-section {
+    border: none;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 1rem;
+
+  }
+.container-head{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color:#1c7ed6;
+}
+.container-head h2{
+    color: #1c3454;
+}
+
+.info-cliente{
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 5px 15px 0px rgb(66 24 113/ 30%);
+    backdrop-filter: blur (20px);
+    -webkit-backdrop-filter: blur (10px);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+}

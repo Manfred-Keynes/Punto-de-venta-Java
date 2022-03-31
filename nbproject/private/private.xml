@@ -16,6 +16,7 @@
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Controlador/detalle_venta.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/css/estilos__empleados.css</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Modelo/Empleado.java</file>
+            <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Modelo/ClienteDAO.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/Reportes.jsp</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Modelo/Venta.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/index.jsp</file>
@@ -29,12 +30,14 @@
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/ventasDetalle.jsp</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Controlador/sr_productos.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Modelo/Cliente.java</file>
+            <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/css/style.css</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/Clientes.jsp</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/Puestos.jsp</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/login_failed.jsp</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Modelo/Persona.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Modelo/Departamento.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/web/js/sweetAlert.js</file>
+            <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Controlador/sr_marca.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Modelo/Marca.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Modelo/ProductoDAO.java</file>
             <file>file:/C:/Users/mfer_/Documents/NetBeansProjects/Ventas/src/java/Controlador/sr_puesto.java</file>
