@@ -88,7 +88,7 @@
           </div>
           <div class="panel right-panel">
             <div class="content">
-              <h3>Perteneces a nosotros?</h3>
+              <h3>Ya tienes cuenta?</h3>
               <p>
                 Inicia sesion pinchando aqui!
               </p>

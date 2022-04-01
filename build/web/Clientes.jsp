@@ -32,8 +32,8 @@ Author     : Lenovo FX
     <nav class="navbar navbar-dark  navbar-expand-md fixed-top" id="mainNav">
       <div class="container">
         <a href="#" class="navbar-brand">
-            <img src="img/header/bag-shoppingMain.ico" alt="logo">
-          <span class="nombre-logo  font-weight-bold" href="welcome.jsp">Manfred Sirin</span>
+          <img src="img/header/terminal-solid_blue.ico" alt="logo">
+            <span class="nombre-logo  font-weight-bold" href="welcome.jsp"><span class="text-primary"><b>Blues</b></span> Sytem
         </a>
         <!--Boton Collapse-->
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive"

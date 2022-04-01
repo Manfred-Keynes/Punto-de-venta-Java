@@ -38,9 +38,9 @@
   <section class="fondo-navbar">
     <nav class="navbar navbar-dark  navbar-expand-md fixed-top" id="mainNav">
       <div class="container">
-        <a href="#" class="navbar-brand">
-            <img src="img/header/bag-shoppingMain.ico" alt="logo">
-          <span class="nombre-logo  font-weight-bold" href="welcome.jsp">Manfred Sirin</span>
+        <a href="welcome.jsp" class="navbar-brand">
+            <img src="img/header/terminal-solid_blue.ico" alt="logo">
+            <span class="nombre-logo  font-weight-bold" ><span class="text-primary"><b>Blues</b></span> Sytem</span>
         </a>
         <!--Boton Collapse-->
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive"
@@ -67,7 +67,7 @@
                 class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Marcas <i class="fa-solid fa-boxes-packing"></i></a></li>
             <li class="nav-item"><a href="Productos.jsp"
                 class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Productos <i class="fa-solid fa-box-open"></i></a></li>
-            <li class="nav-item"><a href="Ventas.jsp"
+            <li class="nav-item"><a href="RegistrarVenta.jsp"
                 class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Ventas <i class="fa-solid fa-bag-shopping"></i></a></li>
             <li class="nav-item"><a href="Reportes.jsp"
                 class="nav-link py-2 px-0 px-md-3 px-lg-3 font-weight-bold text-center rounded">Reportes <i class="fa-solid fa-sheet-plastic"></i></a></li>
